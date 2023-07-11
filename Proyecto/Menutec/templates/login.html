@@ -1,0 +1,89 @@
+{% block title %}
+{% endblock %}
+{% block navbar%}
+{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<title>Login</title>
+<style>    
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body{
+        background-image: url('https://i.ibb.co/bQVQMHW/image-1.png');
+    }
+
+    #Titulo{
+        color: rgb(255, 255, 255);
+        font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        text-align: center;
+        font-size: 70px;
+    }
+
+    #Nom{
+        color: rgb(255, 255, 255);
+        font-family: 'Courier New', Courier, monospace;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    #Con{
+        color: rgb(255, 255, 255);
+        font-family: 'Courier New', Courier, monospace;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    #form{
+        width: 1400px;
+        background: hwb(200 0% 7% / 0.494);
+        height: 600px;
+        margin: auto;
+        margin-top: 70px;
+        max-width: 100%;
+        padding-left: 10px;
+        padding-right: 10px; 
+    }
+
+    #cajatext{
+      max-width: 500px;
+    }
+
+</style>
+
+<body>
+<form method="post" id="form">
+    <div class="container">
+        <div class="row">
+          <div class="col">
+          </div>
+          <div class="col">
+            <img src="https://scontent.flim32-1.fna.fbcdn.net/v/t1.18169-9/11407011_952600218125757_633424278879185377_n.png?_nc_cat=107&ccb=1-7&_nc_sid=174925&_nc_ohc=cd71hrHUpP4AX_TS54C&_nc_ht=scontent.flim32-1.fna&oh=00_AfBC9hWU0Zl4gfX4HIZo2yo8YAcZSDmj4iTo5_BRCDudvg&oe=64D2361E" width="150" height="150">
+            <div class="login-text" ><h1 id="Titulo">Comedor Tecsup</h1></div>
+            <br>
+            <br>
+            <form class="px-4 py-3" method="post" action="{% url 'login' %}" >
+              {% csrf_token %}
+              <div class="mb-3">
+                <center><label class="form-label" id="Nom">Nombre de usuario</label></center>
+                <center><input type="text" class="form-control" name="username" id="cajatext"></center>
+              </div>
+              <br>
+              <div class="mb-3">
+                <center><label for="exampleDropdownFormPassword1" class="form-label" id="Con">Contraseña:</label></center>
+                <center><input type="password" class="form-control" name="password" id="cajatext"></center>
+              </div>
+              <br>
+              <center><div class="text-center"><button type="submit" class="btn btn-primary btn-lg">Iniciar Sesion</button></div></center>
+            </form>
+          </div>
+          <div class="col">
+          </div>
+        </div>
+      </div>
+</form>
+</body>
+{% endblock %}
